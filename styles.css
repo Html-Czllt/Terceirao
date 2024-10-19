@@ -355,8 +355,8 @@ h6{
 }
 
 .image-wrapper6 img {
-    width: 150px; /* Define uma largura fixa (pode ser ajustada) */
-    height: 150px; /* Define uma altura fixa (pode ser ajustada) */
-    border-radius: 50%; /* Faz a imagem ser circular */
+    width: 250px; /* Define uma largura fixa (pode ser ajustada) */
+    height: 250px; /* Define uma altura fixa (pode ser ajustada) */
+    border-radius: 0%; /* Faz a imagem ser circular */
     object-fit: cover; /* Garante que a imagem preencha o círculo */
 }
