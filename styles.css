@@ -1,0 +1,362 @@
+
+html {
+    scroll-behavior: smooth; /* Adiciona rolagem suave a toda a página */
+}
+
+
+html, body {
+    height: 100%; /* Certifique-se de que o corpo ocupa toda a altura */
+    margin: 0; /* Remove margens padrão */
+    display: flex;
+    flex-direction: column; /* Coloca os filhos em coluna */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    overflow-x: hidden; /* Para evitar rolagem horizontal */
+}
+
+header, footer {
+    background-color: #2e2e2e; /* Cinza muito escuro */
+    color: white;
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+    width: 100%; /* Largura total */
+    box-sizing: border-box; /* Inclui o padding dentro da largura */
+}
+
+h1 {
+    margin: 0;
+    color: white; /* Cor do texto do título */
+}
+
+.button-container {
+    display: flex; /* Alinha os botões em linha */
+    justify-content: center; /* Centraliza os botões */
+    margin-top: 10px; /* Espaço acima dos botões */
+}
+
+.simple-button {
+    display: flex; /* Flexbox para centralizar o texto */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    align-items: center; /* Centraliza o texto verticalmente */
+    height: 40px; /* Altura do botão */
+    width: 100px; /* Largura dos botões */
+    margin: 0 10px; /* Espaçamento entre os botões */
+    border: none; /* Remove borda padrão */
+    border-radius: 8px; /* Bordas arredondadas */
+    background-color: black; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    font-family: 'Roboto', sans-serif; /* Fonte do botão */
+    font-size: 16px; /* Tamanho do texto do botão */
+    text-decoration: none; /* Remove a linha debaixo do texto */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s, transform 0.2s; /* Efeito de transição */
+}
+
+.simple-button:hover {
+    background-color: #444; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
+}
+
+.simple-button:active {
+    transform: scale(0.95); /* Diminui o botão ao clicar */
+}
+
+
+main {
+    flex: 1; /* Faz com que o main ocupe o espaço restante */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo do main */
+    justify-content: center; /* Centraliza verticalmente o conteúdo */
+    text-align: center; /* Centraliza o texto dentro do main */
+    width: 100%; /* Certifica que o main ocupa toda a largura */
+    box-sizing: border-box; /* Inclui padding/margem dentro da largura */
+}
+
+.content-box {
+    background-color: white; /* Fundo branco */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px; /* Espaçamento interno */
+    max-width: 800px; /* Largura máxima da caixa */
+    margin: 20px auto; /* Centraliza a caixa e ajusta margem */
+    overflow: hidden; /* Garante que o conteúdo não saia da caixa */
+}
+
+.image-container {
+    display: flex; /* Alinha as imagens em linha */
+    justify-content: center; /* Centraliza o conjunto de imagens */
+    margin-top: 20px; /* Espaço acima do contêiner de imagens */
+    gap: 10px; /* Espaçamento reduzido entre as imagens */
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: column; /* Coloca a imagem e o texto em coluna */
+    align-items: center; /* Centraliza o conteúdo dentro da coluna */
+    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
+    position: relative; /* Para permitir o posicionamento absoluto do coração */
+}
+
+.image-wrapper img {
+    max-width: 300px; /* Limita a largura máxima das imagens */
+    max-height: 300px; /* Altura máxima para as imagens */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas nas imagens */
+    margin-bottom: 10px; /* Espaço entre a imagem e o texto */
+    min-width: 150px; /* Define uma largura mínima para as imagens */
+    transition: filter 0.3s ease; /* Efeito suave para o escurecimento */
+}
+
+.image-wrapper:hover img, .image-wrapper:active img {
+    filter: brightness(70%); /* Escurece a imagem ao passar o mouse ou tocar */
+}
+
+.heart-overlay {
+    position: absolute; /* Para sobrepor o coração sobre a imagem */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para realmente centralizar */
+    display: none; /* Oculta o coração por padrão */
+    transition: opacity 0.5s ease; /* Transição suave para a opacidade */
+    opacity: 0; /* Inicialmente invisível */
+}
+
+.image-wrapper:hover .heart-overlay, .image-wrapper:active .heart-overlay {
+    display: flex; /* Mostra o coração ao passar o mouse ou tocar */
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza o conteúdo */
+    opacity: 1; /* Tornar o coração visível */
+}
+
+.heart {
+    font-size: 20px; /* Tamanho do coração */
+    color: white; /* Cor do coração */
+}
+
+.highlight {
+    font-weight: bold;
+    color: red; /* Adicionando um destaque vermelho */
+}
+
+.communism-logo {
+    max-width: 50%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 20px; /* Espaço acima da imagem */
+    display: block; /* Faz a imagem ocupar a linha inteira */
+    margin-left: auto; /* Centraliza a imagem horizontalmente */
+    margin-right: auto; /* Centraliza a imagem horizontalmente */
+}
+
+.image-container2 {
+    display: flex; /* Usa flexbox para o layout das imagens */
+    flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha */
+    justify-content: space-between; /* Distribui o espaço entre as imagens */
+    margin: 20px 0; /* Espaço acima e abaixo do contêiner */
+}
+
+.image-wrapper2 {
+    flex: 1 1 40%; /* Cada imagem ocupa 40% do espaço disponível */
+    margin: 10px; /* Espaço ao redor de cada imagem */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+    perspective: 1000px; /* Adiciona perspectiva ao contêiner */
+}
+
+.image-wrapper2 img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Borda arredondada para um visual mais suave */
+    transition: transform 0.1s, box-shadow 0.1s; /* Adiciona uma transição suave */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+
+
+.audio-button {
+    margin-top: 10px; /* Espaço acima do botão de áudio */
+    padding: 10px; /* Espaçamento interno do botão de áudio */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+}
+
+
+/* Estilo do Modal */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed; /* Fica em cima da página */
+    z-index: 1; /* Coloca o modal em cima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Habilita rolagem se necessário */
+    background-color: rgb(0,0,0); /* Fundo preto */
+    background-color: rgba(0,0,0,0.4); /* Fundo preto com transparência */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% do topo e centraliza */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+    max-width: 400px; /* Largura máxima */
+}
+
+.close {
+    color: #aaa;
+    float: right; /* Alinha para a direita */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer; /* Muda o cursor para mãozinha */
+}
+
+h6{
+    margin-top: 8%;
+    border-bottom: 4px solid black;
+
+}
+
+/* Estilo para a Seção 2 */
+.section-2 {
+    padding: 20px; /* Espaçamento interno */
+    margin-top: 20px; /* Espaço acima da seção */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+.section-2 h2 {
+    font-size: 1.8em; /* Tamanho da fonte do título da seção */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+}
+
+.section-2 p {
+    margin-bottom: 10px; /* Espaço abaixo dos parágrafos */
+    line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+.image-container {
+    display: flex; /* Para dispor as imagens lado a lado */
+    justify-content: center; /* Centraliza as imagens */
+    gap: 20px; /* Espaço entre as imagens */
+    margin-top: 15px; /* Espaço acima do contêiner de imagens */
+}
+
+.image-wrapper {
+    width: 250px; /* Largura fixa para o wrapper */
+    height: 250px; /* Altura fixa para o wrapper, tornando-o quadrado */
+    overflow: hidden; /* Para garantir que a imagem não ultrapasse o contêiner */
+    border-radius: 8px; /* Bordas arredondadas para os wrappers */
+}
+
+.section-image {
+    width: 100%; /* A imagem ocupa toda a largura do wrapper */
+    height: 100%; /* A imagem ocupa toda a altura do wrapper */
+    object-fit: cover; /* Mantém a proporção e cobre o wrapper sem distorcer */
+}
+
+
+.section-2 {
+    margin: 40px 0; /* Espaço acima e abaixo da seção */
+    text-align: center; /* Centraliza o texto na seção */
+}
+
+
+
+.heros {
+    border-radius: 90%;
+    box-shadow: 0px 10px 2px rgba(12, 8, 46, 0.767);
+}
+
+
+.image-container5 {
+    display: flex;                /* Usar flexbox para alinhar as imagens */
+    flex-wrap: wrap;             /* Permitir que as imagens se quebrem em várias linhas se necessário */
+    justify-content: center;      /* Centralizar as imagens horizontalmente */
+    gap: 10px;                   /* Espaçamento entre as imagens, ajuste conforme necessário */
+}
+
+.image-wrapper5 {
+    width: 250px;                /* Largura do wrapper das imagens */
+    height: 250px;               /* Altura igual à largura para manter o formato quadrado */
+    overflow: hidden;            /* Ocultar qualquer parte da imagem que exceda o wrapper */
+    border-radius: 15px;         /* Bordas arredondadas */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave para o efeito */
+}
+
+.image-wrapper5:hover {
+    transform: scale(1.05);      /* Aumentar a escala ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave ao passar o mouse */
+}
+
+.section-image {
+    width: 100%;                 /* A imagem ocupa 100% do wrapper */
+    height: 100%;                /* A imagem também ocupa 100% da altura do wrapper */
+    object-fit: cover;           /* Cobre o wrapper, mantendo a proporção da imagem */
+    display: block;              /* Evitar espaço em branco abaixo da imagem */
+    transition: transform 0.3s;  /* Transição suave para a imagem também */
+}
+
+.image-wrapper5:hover .section-image {
+    transform: scale(1.1);       /* Leve aumento na imagem ao passar o mouse */
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Aumenta a escala em 10% */
+    }
+    100% {
+        transform: scale(1); /* Retorna à escala original */
+    }
+}
+
+.scroll-button {
+    position: fixed;
+    bottom: 20px; /* Distância do fundo da tela */
+    left: 20px; /* Distância da esquerda da tela */
+    display: none; /* Escondido inicialmente */
+    width: 50px; /* Largura fixa para torná-lo quadrado */
+    height: 50px; /* Altura fixa para torná-lo quadrado */
+    background-color: #333; /* Cor de fundo cinza muito escuro */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    cursor: pointer; /* Muda o cursor para pointer */
+    font-size: 24px; /* Tamanho da fonte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra do botão */
+    transition: opacity 0.3s ease; /* Transição de opacidade */
+    border-radius: 0; /* Remover bordas arredondadas para um botão quadrado */
+}
+
+.scroll-button.show {
+    display: block; /* Exibir o botão */
+    opacity: 1; /* Opacidade total */
+    animation: pulse 0.8s infinite; /* Animação de pulsar */
+}
+
+.image-wrapper6 {
+    display: flex; /* Permite centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin: 20px 0; /* Adiciona margem acima e abaixo */
+}
+
+.image-wrapper6 img {
+    width: 150px; /* Define uma largura fixa (pode ser ajustada) */
+    height: 150px; /* Define uma altura fixa (pode ser ajustada) */
+    border-radius: 50%; /* Faz a imagem ser circular */
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+}
