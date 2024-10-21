@@ -68,3 +68,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 });
+
+
+
+
+
+const imageWrappers = document.querySelectorAll('.image-wrapper1');
+
+imageWrappers.forEach(wrapper => {
+    let clickCount = 0;
+    
+    wrapper.addEventListener('click', () => {
+        clickCount++;
+        
+        if (clickCount === 1) {
+            setTimeout(() => {
+                clickCount = 0; // Reinicia o contador após 500ms
+            }, 500);
+        } else if (clickCount === 2) {
+            const liked = wrapper.getAttribute('data-liked') === 'true';
+            wrapper.setAttribute('data-liked', !liked);
+            wrapper.classList.toggle('liked', !liked);
+            
+            // Reseta a animação
+            const likeIndicator = wrapper.querySelector('.like-indicator');
+            likeIndicator.style.animation = 'none'; // Para reiniciar a animação
+            likeIndicator.offsetHeight; // Força a reflow
+            likeIndicator.style.animation = ''; // Reinicia a animação
+            
+            clickCount = 0; // Reinicia o contador após dar like
+        }
+    });
+});
