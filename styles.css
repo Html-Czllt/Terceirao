@@ -28,9 +28,28 @@ header, footer {
 }
 
 h1 {
-    margin: 0;
-    color: white; /* Cor do texto do título */
+    font-family: 'Roboto', sans-serif; /* Fonte do título */
+    font-size: 36px; /* Tamanho do texto do título */
+    text-align: center; /* Centraliza o texto */
 }
+
+.highlight {
+    color: white; /* Cor branca */
+    background: linear-gradient(90deg, transparent, transparent); /* Gradiente inicial */
+    background-clip: text; /* Clipa o fundo ao texto */
+    -webkit-background-clip: text; /* Para compatibilidade com Safari */
+    display: inline-block; /* Permite o efeito de transformação */
+    transition: background 0.3s, transform 0.3s; /* Efeito de transição */
+}
+
+.highlight:hover {
+    background: linear-gradient(90deg, #ff4081, #ff5e9c); /* Gradiente ao passar o mouse */
+    background-clip: text; /* Clipa o fundo ao texto */
+    -webkit-background-clip: text; /* Para compatibilidade com Safari */
+    transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
+}
+
+
 
 .button-container {
     display: flex; /* Alinha os botões em linha */
@@ -53,16 +72,31 @@ h1 {
     font-size: 16px; /* Tamanho do texto do botão */
     text-decoration: none; /* Remove a linha debaixo do texto */
     cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
-    transition: background-color 0.3s, transform 0.2s; /* Efeito de transição */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Efeito de transição */
 }
 
 .simple-button:hover {
-    background-color: #444; /* Cor ao passar o mouse */
-    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
+    background-color: #ff4040; /* Cor vibrante ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 0 4px 20px rgba(255, 64, 64, 0.5); /* Sombra suave ao passar o mouse */
+    animation: pulse 0.6s infinite; /* Animação de pulsação */
 }
 
 .simple-button:active {
     transform: scale(0.95); /* Diminui o botão ao clicar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra reduzida ao clicar */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.15); /* Aumenta mais no meio da animação */
+    }
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 
@@ -348,15 +382,55 @@ h6{
 }
 
 .image-wrapper6 {
-    display: flex; /* Permite centralizar o conteúdo */
+    width: 350px; /* Largura do contêiner */
+    display: flex; /* Permite o uso de flexbox */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-    margin: 20px 0; /* Adiciona margem acima e abaixo */
+    margin: 20px auto; /* Margem em cima e embaixo, e centraliza o contêiner */
+    height: 200px; /* Define uma altura para o contêiner */
 }
 
-.image-wrapper6 img {
-    width: 250px; /* Define uma largura fixa (pode ser ajustada) */
-    height: 250px; /* Define uma altura fixa (pode ser ajustada) */
-    border-radius: 0%; /* Faz a imagem ser circular */
-    object-fit: cover; /* Garante que a imagem preencha o círculo */
+.section2-image {
+    max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
+    max-height: 100%; /* Garante que a imagem não exceda a altura do contêiner */
+    object-fit: cover; /* Cobre o contêiner mantendo a proporção */
+}
+
+.image-container6 {
+    display: flex; /* Alinha os itens em uma linha */
+    justify-content: center; /* Centraliza as imagens */
+    gap: 10px; /* Espaço entre as imagens */
+    margin-bottom: 10%;
+}
+
+.image-wrapper9 {
+    position: relative; /* Para posicionar o fundo */
+    width: 250px; /* Largura fixa para o contêiner da imagem */
+    height: 250px; /* Altura fixa para o contêiner da imagem */
+    overflow: hidden; /* Para esconder elementos que saem do contêiner */
+    border-radius: 20px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 1);
+}
+
+.image-wrapper9 .section-image {
+    width: 100%; /* Ajusta a imagem para preencher o contêiner */
+    height: 100%; /* Garante que a imagem preencha a altura do contêiner */
+    object-fit: cover; /* Mantém a proporção da imagem e cobre o contêiner */
+    transition: transform 0.4s ease; /* Suaviza a transição da imagem */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center; /* Centraliza o vídeo na página */
+    margin: 20px; /* Margem ao redor do vídeo */
+}
+
+video {
+    width: 600px; /* Define a largura do vídeo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave ao redor do vídeo */
+}
+
+
+.section-3 h3{
+    font-size: 30px;
 }
