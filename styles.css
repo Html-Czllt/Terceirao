@@ -484,3 +484,96 @@ video {
         opacity: 0; /* Continua a desaparecer */
     }
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px; /* Reduz o tamanho do título em telas menores */
+    }
+
+    .simple-button {
+        width: 80px; /* Ajusta a largura do botão */
+        font-size: 14px; /* Diminui o tamanho da fonte do botão */
+    }
+
+    .content-box {
+        margin: 10px; /* Reduz a margem da caixa de conteúdo */
+        padding: 10px; /* Ajusta o padding para melhor uso do espaço */
+    }
+
+    .image-container {
+        display: flex; /* Mantém as imagens em linha */
+        flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha se necessário */
+        justify-content: center; /* Centraliza as imagens */
+        gap: 10px; /* Espaço entre as imagens */
+    }
+
+    .image-wrapper {
+        width: 45%; /* Ajusta a largura para 45% para que caibam duas imagens na linha */
+        height: auto; /* Permite que a altura se ajuste */
+    }
+
+    .image-wrapper1 {
+        width: 45%; /* Ajusta a largura dos wrappers de imagem */
+        height: auto; /* Permite que a altura se ajuste */
+    }
+
+    .image-container1 {
+        display: flex; /* Mantém as imagens em linha */
+        flex-wrap: wrap; /* Permite quebra de linha se necessário */
+        justify-content: center; /* Centraliza as imagens */
+        gap: 10px; /* Espaçamento entre as imagens */
+    }
+
+    video {
+        width: 100%; /* Faz o vídeo ocupar toda a largura do contêiner */
+    }
+
+    .scroll-button {
+        bottom: 10px; /* Ajusta a posição do botão de rolagem */
+        left: 10px; /* Ajusta a posição do botão de rolagem */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px; /* Diminui ainda mais o tamanho do título */
+    }
+
+    .highlight {
+        font-size: 1.2em; /* Ajusta o tamanho do texto destacado */
+    }
+
+    .simple-button {
+        width: 60px; /* Ajusta a largura do botão para telas muito pequenas */
+        font-size: 12px; /* Diminui o tamanho da fonte ainda mais */
+    }
+
+    .section-2 h2 {
+        font-size: 1.5em; /* Reduz o tamanho do subtítulo */
+    }
+
+    .section-2 p {
+        font-size: 14px; /* Ajusta o tamanho da fonte dos parágrafos */
+    }
+
+    .image-container2 {
+        display: flex; /* Mantém o layout flexível */
+        flex-wrap: wrap; /* Permite quebra de linha se necessário */
+        justify-content: center; /* Centraliza as imagens */
+    }
+
+    .image-wrapper2 {
+        flex: 1 1 100%; /* Faz as imagens ocuparem toda a largura em telas muito pequenas */
+        margin: 5px 0; /* Espaço reduzido entre imagens */
+    }
+
+    .image-wrapper5,
+    .image-wrapper9 {
+        width: 30%; /* Ajusta a largura dos wrappers de imagem */
+        height: auto; /* Permite que a altura se ajuste */
+    }
+
+    .communism-logo {
+        max-width: 80%; /* Ajusta a largura máxima da imagem */
+    }
+}
